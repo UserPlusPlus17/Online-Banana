@@ -4,12 +4,11 @@ import std.stdio;
 
 void main()
 {
-    // Server
     Socket serverSocket = new TcpSocket();
-    serverSocket.bind(new InternetAddress("0.0.0.0", 8080));
-    serverSocket.listen(1);
+    serverSocket.bind(new InternetAddress("127.0.0.1", 8080));
+    serverSocket.listen(10);
 
-    writeln("Server is created...");
+    writeln("Server is created!");
 
     Socket clientSocket = serverSocket.accept();
     writeln("Connection established with ", clientSocket.remoteAddress);
